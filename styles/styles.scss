@@ -4,11 +4,10 @@ $fw-bold: 700;
 $fs-base: 14px;
 $fs-header: 22px;
 $color-text: #595959;
-$color-primary: #0056B8;
-$color-primary--lighter: #3FB3EE;
-$color-secondary: #FAB283;
-$color-secondary--darker: #F6A067;
-$color-accent: #79CC96;
+$color-blue: #0056B8;
+$color-blue--lighter: #3FB3EE;
+$color-orange: #FAB283;
+$color-green: #79CC96;
 $color-white: #FFFFFF;
 
 $padding-XS: 8px;
@@ -37,7 +36,7 @@ body {
     background: $color-white;
 
     ::selection {
-        background-color: $color-primary;
+        background-color: $color-blue;
         color: $color-white;
     }
 
@@ -84,7 +83,7 @@ body {
         }
 
         &__title {
-            background-color: $color-secondary;
+            background-color: $color-orange;
             color: $color-white;
             padding: $padding-S;
         }
@@ -99,7 +98,7 @@ body {
         }
 
         &__info {
-            background-color: $color-primary;
+            background-color: $color-blue;
             color: $color-white;
             text-align: center;
             padding: 1em 3em;
@@ -145,7 +144,7 @@ body {
         }
 
         &__title {
-            background-color: $color-secondary;
+            background-color: $color-orange;
             color: $color-white;
             padding: $padding-S;
             text-align: center;
@@ -193,7 +192,7 @@ body {
         .es-header {
             text-align: center;
             padding: $padding-S;
-            background-color: $color-secondary;
+            background-color: $color-orange;
             color: $color-white;
         }
 
@@ -221,7 +220,7 @@ body {
         }
 
         &__textTitle {
-            color: $color-secondary;
+            color: $color-orange;
             font-weight: $fw-bold;
             width: 85%;
             max-width: 300px;
@@ -236,7 +235,7 @@ body {
         }
 
         &__plus {
-            color: $color-secondary;
+            color: $color-orange;
             font-size: calc(2*$fs-header);
             font-weight: $fw-bold;
             text-align: center;
@@ -269,7 +268,7 @@ body {
         }
 
         &__odkryj {
-            background-color: $color-primary;
+            background-color: $color-blue;
             color: $color-white;
             font-size: $fs-header;
             text-align: center;
@@ -280,7 +279,7 @@ body {
         }
 
         .es-header {
-            color: $color-secondary;
+            color: $color-orange;
         }
 
         .es-header--bold {
@@ -337,7 +336,7 @@ body {
         }
 
         &__name {
-            background-color: $color-secondary;
+            background-color: $color-orange;
             color: $color-white;
             padding: $padding-XS $padding-M;
             font-weight: $fw-bold;
@@ -357,11 +356,15 @@ body {
         .es-header {
             text-align: center;
             padding: $padding-L;
-            color: $color-primary;
+            color: $color-blue;
         }
 
         .es-header--bold {
             display: block;
+        }
+
+        .es-cross__odkryj {
+            margin: 0 auto 8px auto;
         }
 
         &__title--desktop {
@@ -396,15 +399,15 @@ body {
         }
 
         &__single:nth-child(1) {
-            background-color: $color-primary--lighter;
+            background-color: $color-blue--lighter;
         }
 
         &__single:nth-child(2) {
-            background-color: $color-secondary;
+            background-color: $color-orange;
         }
 
         &__single:nth-child(3) {
-            background-color: $color-accent;
+            background-color: $color-green;
         }
     }
 
@@ -449,7 +452,7 @@ body {
         }
 
         &__icon {
-            background-color: $color-primary;
+            background-color: $color-blue;
             padding: $padding-XS;
             border-radius: $padding-XS;
             width: 80px;
@@ -459,9 +462,16 @@ body {
         }
     }
 
+
     @media (min-width: 576px) and (max-width: 719px) {
         .es-kv__packshot {
             display: none;
+        }
+    }
+
+    @media (max-width: 719px) {
+        .es-kv__packshot img {
+            max-height: 300px;
         }
     }
 
@@ -547,45 +557,13 @@ body {
         }
 
         .es-cross__single:hover .es-cross__name {
-            background-color: $color-primary;
+            background-color: $color-blue;
         }
 
         .es-cross__desc {
             height: 4em;
         }
 
-        .es-products__title--mobile {
-            display: none;
-        }
-
-        .es-products__title--desktop {
-            display: block;
-        }
-
-        .es-products {
-            display: flex;
-        }
-
-        .es-products__bg {
-            height: 100%;
-        }
-
-        .es-products__bg img {
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .es-products .es-header {
-            padding-inline: unset;
-        }
-
-        .es-products__wrapper {
-            padding-right: 0;
-        }
-
-        .es-products__single {
-            border-radius: 0 0 0 $padding-XS;
-        }
     }
 
     @media (min-width: 720px) {
@@ -614,7 +592,7 @@ body {
 
         .es-kv__right img {
             height: 100%;
-            object-position: right;
+            object-position: left;
         }
 
         .es-kv__logo {
@@ -658,7 +636,7 @@ body {
             flex-basis: 50%;
             display: grid;
             align-content: flex-start;
-            max-width: 380px;
+            max-width: 390px;
         }
 
         .es-formula__single:hover {
@@ -673,8 +651,9 @@ body {
 
         .es-cross__left {
             justify-content: center;
-            width: 40%;
+            width: 42%;
             gap: $padding-L;
+            padding-top: 80px;
         }
 
         .es-cross__wrapper {
@@ -703,21 +682,49 @@ body {
             height: 3em;
         }
 
+        .es-products {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .es-products__bg {
+            height: 100%;
+        }
+
+        .es-products__bg img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .es-products .es-header {
+            padding-inline: unset;
+        }
+
+        .es-products__single {
+            border-radius: 0 $padding-XS;
+            font-size: 18px;
+        }
+
         .es-products__left {
-            width: 54%;
+            width: 46%;
         }
 
         .es-products__right {
-            width: 46%;
+            width: 54%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
+
 
         .es-ekspert {
             display: flex;
         }
 
         .es-ekspert__left {
-            width: 54%
+            width: 54%;
         }
+
         .es-ekspert__right {
             width: 46%;
         }
